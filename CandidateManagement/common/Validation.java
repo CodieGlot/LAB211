@@ -3,7 +3,6 @@ package CandidateManagement.common;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Scanner;
-
 import CandidateManagement.model.Candidate;
 
 public class Validation {

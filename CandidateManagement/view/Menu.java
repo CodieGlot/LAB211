@@ -1,8 +1,7 @@
 package CandidateManagement.view;
 
-import java.util.ArrayList;
-
 import CandidateManagement.common.Library;
+import java.util.ArrayList;
 
 public abstract class Menu<T> {
 

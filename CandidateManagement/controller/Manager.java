@@ -5,24 +5,42 @@ import java.util.Calendar;
 
 import CandidateManagement.common.Validation;
 import CandidateManagement.model.Candidate;
-import CandidateManagement.model.Experience;
-import CandidateManagement.model.Fresher;
 import CandidateManagement.model.Internship;
+import CandidateManagement.model.Fresher;
+import CandidateManagement.model.Experience;
+import CandidateManagement.view.Menu;
 
-public class Manager {
+public class Manager extends Menu {
 
-    public static int menu() {
-        System.out.println("1. Experience");
-        System.out.println("2. Fresher");
-        System.out.println("3. Internship");
-        System.out.println("4. Searching");
-        System.out.println("5. Exit");
-        System.out.print("Enter your choice: ");
-        int choice = Validation.checkInputIntLimit(1, 5);
-        return choice;
+    public Manager() {
+        super("CANDIDATE MANAGEMENT", new String[] { "Experience", "Fresher", "Internship", "Searching", "Exit" });
     }
 
-    public static void createCandidate(ArrayList<Candidate> candidates,
+    @Override
+    public void execute(int n) {
+        ArrayList<Candidate> candidates = new ArrayList<>();
+        switch (n) {
+            case 1:
+                createCandidate(candidates, 0);
+                break;
+            case 2:
+                createCandidate(candidates, 1);
+                break;
+            case 3:
+                createCandidate(candidates, 2);
+                break;
+            case 4:
+                searchCandidate(candidates);
+                break;
+            case 5:
+                System.out.println("Exiting the candidate management menu.");
+                break;
+            default:
+                System.out.println("Invalid choice. Please choose a valid option.");
+        }
+    }
+
+    public void createCandidate(ArrayList<Candidate> candidates,
             int type) {
 
         while (true) {
@@ -68,7 +86,7 @@ public class Manager {
     }
 
     // allow user create experience
-    public static void createExperience(ArrayList<Candidate> candidates,
+    public void createExperience(ArrayList<Candidate> candidates,
             Candidate candidate) {
         System.out.print("Enter year of experience: ");
         int yearExperience = Validation.checkInputExprience(candidate.getBirthDate());
@@ -82,7 +100,7 @@ public class Manager {
     }
 
     // allow user create fresher
-    public static void createFresher(ArrayList<Candidate> candidates,
+    public void createFresher(ArrayList<Candidate> candidates,
             Candidate candidate) {
         System.out.print("Enter graduation date: ");
         String graduationDate = Validation.checkInputString();
@@ -97,7 +115,7 @@ public class Manager {
     }
 
     // allow user create internship
-    public static void createInternship(ArrayList<Candidate> candidates,
+    public void createInternship(ArrayList<Candidate> candidates,
             Candidate candidate) {
         System.out.print("Enter major: ");
         String major = Validation.checkInputString();
@@ -114,7 +132,7 @@ public class Manager {
     }
 
     // allow user search candidate by name
-    public static void searchCandidate(ArrayList<Candidate> candidates) {
+    public void searchCandidate(ArrayList<Candidate> candidates) {
         printListNameCandidate(candidates);
         System.out.print("Enter andidate name (First name or Last name): ");
         String nameSearch = Validation.checkInputString();
@@ -130,7 +148,7 @@ public class Manager {
     }
 
     // display list name candidate
-    public static void printListNameCandidate(ArrayList<Candidate> candidates) {
+    public void printListNameCandidate(ArrayList<Candidate> candidates) {
         System.err.println("Experience Candidate");
         for (Candidate candidate : candidates) {
             if (candidate instanceof Experience) {
@@ -153,5 +171,4 @@ public class Manager {
             }
         }
     }
-
 }
