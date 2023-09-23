@@ -3,14 +3,10 @@ package Manage;
 import static java.lang.System.exit;
 import view.Menu;
 
-/**
- * This class manages the conversion operations and menu for the conversion program.
- * Author: DAO
- */
 public class Convert_Management extends Menu<String> {
     private CheckInput checkInput;
-    static String[] mc = {"Convert from Binary", "Convert from Decimal", "Convert from Hexadecimal", "Exit"};
-    
+    static String[] mc = { "Convert from Binary", "Convert from Decimal", "Convert from Hexadecimal", "Exit" };
+
     public Convert_Management() {
         super("Convert_Management", mc);
         checkInput = new CheckInput();

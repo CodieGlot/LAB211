@@ -1,21 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Manage;
 
 import java.util.Scanner;
 
-/**
- *
- * @author DAO
- */
 public class CheckInput {
-        private final static Scanner in = new Scanner(System.in);
-        
-     //check user input number limit
-        public int checkInputIntLimit(int min, int max) {
-        //loop until user input correct
+    private final static Scanner in = new Scanner(System.in);
+
+    // check user input number limit
+    public int checkInputIntLimit(int min, int max) {
+        // loop until user input correct
         while (true) {
             try {
                 int result = Integer.parseInt(in.nextLine().trim());
@@ -30,7 +22,8 @@ public class CheckInput {
             }
         }
     }
-       public String checkInputBinary() {
+
+    public String checkInputBinary() {
         String binaryInput;
         boolean isValid;
 
@@ -48,8 +41,8 @@ public class CheckInput {
 
         return binaryInput;
     }
-     
-      public int checkInputDecimal() {
+
+    public int checkInputDecimal() {
         int decimalInput = 0;
         boolean isValid = false;
 
@@ -65,8 +58,8 @@ public class CheckInput {
 
         return decimalInput;
     }
-      
-      public String checkInputHexaDecimal() {
+
+    public String checkInputHexaDecimal() {
         String hexaInput;
         boolean isValid;
 

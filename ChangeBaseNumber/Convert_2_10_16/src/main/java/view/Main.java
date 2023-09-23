@@ -6,10 +6,6 @@ package view;
 
 import Manage.Convert_Management;
 
-/**
- *
- * @author DAO
- */
 public class Main {
 
     public static void main(String[] args) {
